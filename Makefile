@@ -1,3 +1,4 @@
+.ONESHELL:
 .PHONY: image docs compose_build compose_up compose_down
 
 image:
@@ -7,13 +8,16 @@ docs:
 	cd docs/ && make html
 
 compose_build:
-	docker-compose -f docker/docker-compose.yml build
+	cd docker
+	docker compose -f docker-compose.yml build
 
 compose_up:
-	docker-compose -f docker/docker-compose.yml up
+	cd docker
+	docker compose -f docker-compose.yml up
 
 compose_down:
-	docker-compose -f docker/docker-compose.yml down
+	cd docker
+	docker compose -f docker-compose.yml down
 
 # Development Setup
 .venv:
@@ -22,7 +26,7 @@ compose_down:
 	python3 -m pip install -r requirements-dev.txt
 
 .git/hooks/pre-commit: .venv
-	python3 -m pre_commit install
+	.venv/bin/python -m pre_commit install
 
 .env:
 	cp development.env .env
@@ -32,10 +36,12 @@ setup_local: .venv .env .git/hooks/pre-commit
 
 _PHONY: startdb stopdb
 startdb:
-	docker compose -f docker/docker-compose.yml up db -d
+	cd docker
+	docker compose -f docker-compose.yml up db -d
 
 stopdb:
-	docker compose -f docker/docker-compose.yml stop db
+	cd docker
+	docker compose -f docker-compose.yml stop db
 
 _PHONY: superuser
 createsuperuser: setup_local startdb
@@ -48,10 +54,13 @@ test: setup_local
 # Active development
 _PHONY: migrations server stator
 migrations: setup_local startdb
+	. .venv/bin/activate
 	python3 -m manage migrate
 
 runserver: setup_local startdb
+	. .venv/bin/activate
 	python3 -m manage runserver
 
 runstator: setup_local startdb
+	. .venv/bin/activate
 	python3 -m manage runstator
