@@ -45,10 +45,12 @@ stopdb:
 
 _PHONY: superuser
 createsuperuser: setup_local startdb
+	. .venv/bin/activate
 	python3 -m manage createsuperuser
 
 _PHONY: test
 test: setup_local
+	. .venv/bin/activate
 	python3 -m pytest
 
 # Active development
