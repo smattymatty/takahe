@@ -82,28 +82,28 @@ td a {
 /* Base template styling */
 
 :root {
-    --color-highlight: #449c8c;
+    --color-highlight: #73bed3;
 
-    --color-bg-main: #26323c;
-    --color-bg-menu: #2e3e4c;
-    --color-bg-box: #1a2631;
-    --color-bg-error: rgb(87, 32, 32);
-    --color-delete: #8b2821;
-    --color-header-menu: rgba(255, 255, 255, 0.8);
-    --color-main-shadow: rgba(0, 0, 0, 0.6);
+    --color-bg-main: #10141f;
+    --color-bg-menu: #202e37;
+    --color-bg-box: #151d28;
+    --color-bg-error: #752438;
+    --color-delete: #a53030;
+    --color-header-menu: rgba(235, 237, 233, 0.8);
+    --color-main-shadow: rgba(9, 10, 20, 0.6);
     --size-main-shadow: 50px;
 
-    --color-text-duller: #5f6983;
-    --color-text-dull: #99a;
-    --color-text-main: #fff;
+    --color-text-duller: #577277;
+    --color-text-dull: #819796;
+    --color-text-main: #ebede9;
     --color-text-link: var(--color-highlight);
-    --color-text-in-highlight: var(--color-text-main);
+    --color-text-in-highlight: #090a14;
 
     --color-input-background: var(--color-bg-main);
-    --color-input-border: #000;
-    --color-input-border-active: #444b5d;
-    --color-button-secondary: #2e3e4c;
-    --color-button-disabled: #7c9c97;
+    --color-input-border: #090a14;
+    --color-input-border-active: #394a50;
+    --color-button-secondary: #394a50;
+    --color-button-disabled: #577277;
 
     --width-sidebar-small: 200px;
     --width-sidebar-medium: 250px;
@@ -112,25 +112,25 @@ td a {
 }
 
 body.theme-light {
-    --color-bg-main: #d4dee7;
-    --color-bg-menu: #c0ccd8;
-    --color-bg-box: #f0f3f5;
-    --color-bg-error: rgb(219, 144, 144);
-    --color-delete: #884743;
-    --color-header-menu: rgba(0, 0, 0, 0.7);
+    --color-bg-main: #c7cfcc;
+    --color-bg-menu: #a8b5b2;
+    --color-bg-box: #ebede9;
+    --color-bg-error: #cf573c;
+    --color-delete: #a53030;
+    --color-header-menu: rgba(16, 20, 31, 0.8);
     --color-main-shadow: rgba(0, 0, 0, 0.1);
     --size-main-shadow: 20px;
 
-    --color-text-duller: #4f5157;
-    --color-text-dull: rgb(62, 62, 68);
-    --color-text-main: rgb(0, 0, 0);
-    --color-text-link: var(--color-highlight);
+    --color-text-duller: #577277;
+    --color-text-dull: #394a50;
+    --color-text-main: #10141f;
+    --color-text-link: #3c5e8b;
 
     --color-input-background: var(--color-bg-main);
-    --color-input-border: rgb(109, 109, 109);
-    --color-input-border-active: #464646;
-    --color-button-secondary: #5c6770;
-    --color-button-disabled: #a1a1a1;
+    --color-input-border: #819796;
+    --color-input-border-active: #394a50;
+    --color-button-secondary: #577277;
+    --color-button-disabled: #a8b5b2;
 }
 
 body {
